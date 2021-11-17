@@ -23,7 +23,7 @@
             margin-top: 80px;
             font-weight: bolder;
         }
-
+        
         .cats {
             display: flex;
             margin-top: 60px;
