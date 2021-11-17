@@ -51,8 +51,6 @@
         }
     </style>
 
-
-    <body>
         <div class="content">
             <div class="banner">
                 <img class="banner-image" src="https://static.wixstatic.com/media/f420dd_3c8dba8381394c4d833c7a78bfa6475e~mv2.png/v1/fill/w_1903,h_680,al_c,q_90,usm_0.66_1.00_0.01/f420dd_3c8dba8381394c4d833c7a78bfa6475e~mv2.webp">
@@ -131,7 +129,6 @@
 
         <div class="item20">bottom_banner_right</div>--%>
         </div>
-    </body>
 
 
 
