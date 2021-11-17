@@ -2,9 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html>
-<head>
-    <style>
+<style>
         .item1 {
             grid-column: 1 / span 4;
         }
@@ -81,10 +79,7 @@
             width: 100%;
         }
     </style>
-</head>
-
-<body>
-
+    
     <div class="grid-container">
         
         <div class="item1">
@@ -164,8 +159,5 @@
         <div class="item20">bottom_banner_right</div>
 
     </div>
-</body>
-
-</html>
 
 </asp:Content>
