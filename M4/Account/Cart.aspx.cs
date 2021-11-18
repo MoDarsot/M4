@@ -12,8 +12,6 @@ namespace M4.Account
 
     public partial class Cart : System.Web.UI.Page
     {
-        decimal total = 0;
-
         List<CartItem> cartList = new List<CartItem>();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,24 +26,23 @@ namespace M4.Account
 
         protected void UpdateCart()
         {
-            gridCart.DataSource = cartList;
+            SqlDSCustomer1.SelectParameters["Email"].DefaultValue = User.Identity.Name.ToString();
             gridCart.DataBind();
-            for (int i = 0; i < gridCart.Rows.Count; i++)
-            {
-                gridCart.Rows[i].Cells[3].Text = String.Format("{0:C2}", Convert.ToDecimal(gridCart.Rows[i].Cells[3].Text));
-                gridCart.Rows[i].Cells[5].Text = String.Format("{0:C2}", Convert.ToDecimal(gridCart.Rows[i].Cells[5].Text));
-            }
+            if (!Page.IsPostBack)
+                Session["Cart"] = cartList;
+            else
+                cartList = (List<CartItem>)Session["Cart"];
         }
 
         protected decimal GetCartTotal()
         {
+            UpdateCart();
             Decimal total = 0;
             for (int i = 0; i < cartList.Count; i++)
             {
                 total += cartList[i].SubTotal;
             }
 
-            this.total = total;
             return total;
         }
 
@@ -58,11 +55,13 @@ namespace M4.Account
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
+            UpdateCart();
             string connString = @"Data Source=146.230.177.46\ist3;Initial Catalog=group26;Persist Security Info=True;User ID=group26;Password=d1er2";
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, 'muhammadmia7@gmail.com', 'web', '" + DateTime.Now + "', 'Bank', " + (Decimal)total + ");");
+            Decimal total = GetCartTotal();
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, 'muhammadmia7@gmail.com', 'web', '" + DateTime.Now.ToShortDateString() + "', 'Bank', " + (Decimal)total + ");");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -78,6 +77,8 @@ namespace M4.Account
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            UpdateCart();
         }
 
     }
