@@ -51,6 +51,15 @@ namespace M4.Account
         protected global::System.Web.UI.WebControls.GridView gridCart;
 
         /// <summary>
+        /// group26 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource group26;
+
+        /// <summary>
         /// lblText control.
         /// </summary>
         /// <remarks>
@@ -85,5 +94,14 @@ namespace M4.Account
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCheckout;
+
+        /// <summary>
+        /// btnAddToCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddToCart;
     }
 }
