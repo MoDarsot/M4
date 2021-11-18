@@ -50,6 +50,11 @@
             flex-direction: row;
         }
 
+        .sale-item {
+            display: flex;
+            flex-direction: column;
+        }
+
         .feature-cat img {
             max-width: 300px;
         }
@@ -62,6 +67,12 @@
             justify-content: center;
             margin-top: 50px;
         }
+
+        .add-to-cat-btn {
+            width: 60px;
+            height: 20px;
+        }
+
     </style>
 
         <div class="content">
@@ -104,23 +115,45 @@
 
             <div class="cats">
                 <div class="feature-cat">
-                    <img src="https://static.wixstatic.com/media/f420dd_8901e50682b94770817dc116f2c87ede~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_8901e50682b94770817dc116f2c87ede~mv2.webp"
-                 alt="1" />
-                    <img src="https://static.wixstatic.com/media/f420dd_c7fd0803179447e4bf462a62991b888b~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_c7fd0803179447e4bf462a62991b888b~mv2.webp"
-                 alt="1" />
-                    <img src="https://static.wixstatic.com/media/f420dd_3156ae3ff0b84234841d75e565b91fa3~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_3156ae3ff0b84234841d75e565b91fa3~mv2.webp"
-                 alt="1" />
-                    <img src="https://static.wixstatic.com/media/f420dd_0e1fcf86bac849f88f69942c1936e748~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_0e1fcf86bac849f88f69942c1936e748~mv2.webp"
-                 alt="1" />
+                    <div class="sale-item">
+                        <img src="https://static.wixstatic.com/media/f420dd_8901e50682b94770817dc116f2c87ede~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_8901e50682b94770817dc116f2c87ede~mv2.webp"
+                            alt="1" />
+                        <asp:Button ID="add99" CssClass="add-to-cart-btn" runat="server" Text="Add to Cart" OnClick="add99_click" />
+                    </div>
+
+                    <div class="sale-item">
+                        <img src="https://static.wixstatic.com/media/f420dd_c7fd0803179447e4bf462a62991b888b~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_c7fd0803179447e4bf462a62991b888b~mv2.webp"
+                            alt="1" />
+                        <asp:Button ID="add169" CssClass="add-to-cart-btn" runat="server" Text="Add to Cart" OnClick="add169_click"/>
+                    </div>
+                    <div class="sale-item">
+                        <img src="https://static.wixstatic.com/media/f420dd_3156ae3ff0b84234841d75e565b91fa3~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_3156ae3ff0b84234841d75e565b91fa3~mv2.webp"
+                            alt="1" />
+                        <asp:Button ID="add219" CssClass="add-to-cart-btn" runat="server" Text="Add to Cart" OnClick="add219_click"/>
+                    </div>
+                    <div class="sale-item">
+                        <img src="https://static.wixstatic.com/media/f420dd_0e1fcf86bac849f88f69942c1936e748~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_0e1fcf86bac849f88f69942c1936e748~mv2.webp"
+                            alt="1" />
+                        <asp:Button ID="add279" CssClass="add-to-cart-btn" runat="server" Text="Add to Cart" OnClick="add279_click"/>
+                    </div>
+
                 </div>
             </div>
 
             <div class="cats">
                 <div class="feature-cat">
-                    <img src="https://static.wixstatic.com/media/f420dd_b52e4b56e7e14273b3daa0da0e9a2299~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_b52e4b56e7e14273b3daa0da0e9a2299~mv2.webp"
-                 alt="1" />
-                    <img src="https://static.wixstatic.com/media/f420dd_f15b5e9d766341dcb40a1a1d140a324d~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_f15b5e9d766341dcb40a1a1d140a324d~mv2.webp"
-                 alt="1" />
+
+                    <div class="sale-item">
+                        <img src="https://static.wixstatic.com/media/f420dd_b52e4b56e7e14273b3daa0da0e9a2299~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_b52e4b56e7e14273b3daa0da0e9a2299~mv2.webp"
+                            alt="1" />
+                        <asp:Button ID="add429" CssClass="add-to-cart-btn" runat="server" Text="Add to Cart" OnClick="add429_click"/>
+                    </div>
+                    <div class="sale-item">
+                        <img src="https://static.wixstatic.com/media/f420dd_f15b5e9d766341dcb40a1a1d140a324d~mv2.jpeg/v1/fit/w_1050,h_775,q_90/f420dd_f15b5e9d766341dcb40a1a1d140a324d~mv2.webp"
+                            alt="1" />
+                        <asp:Button ID="add529" CssClass="add-to-cart-btn" runat="server" Text="Add to Cart" OnClick="add529_click"/>
+                    </div>
+
                 </div>
 
             </div>

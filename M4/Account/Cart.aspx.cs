@@ -58,26 +58,16 @@ namespace M4.Account
             SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, 'muhammadmia7@gmail.com', 'web', '" + DateTime.Now.ToShortDateString() + "', 'Bank', " + (Decimal)total + ");");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
+            conn.Close();
 
+            conn.Open();
             cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='muhammadmia7@gmail.com';");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
-        protected void btnAddToCart_Click(object sender, EventArgs e)
-        {
-            string connString = @"Data Source=146.230.177.46\ist3;Initial Catalog=group26;Persist Security Info=True;User ID=group26;Password=d1er2";
-            SqlConnection conn = new SqlConnection(connString);
-
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(1, 'muhammadmia7@gmail.com', 'P001', 'Item 1', 'Test', 'Test', 'White', 1, 100);");
-            cmd.Connection = conn;
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            GetCartTotal();
-        }
+        
 
         protected void btnClearCart_Click(object sender, EventArgs e)
         {
