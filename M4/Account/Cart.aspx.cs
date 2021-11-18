@@ -22,6 +22,8 @@ namespace M4.Account
                 Session["Cart"] = cartList;
             else
                 cartList = (List<CartItem>)Session["Cart"];
+
+            FilterCart();
         }
 
         protected void UpdateCart()
@@ -35,13 +37,14 @@ namespace M4.Account
             {
                 if (gridCart.Rows[i].Cells[1].Text != User.Identity.Name.ToString())
                 {
-                    gridCart.DeleteRow(rowIndex: i);
+                    gridCart.DeleteRow(i);
                 }
             }
         }
 
         protected decimal GetCartTotal()
         {
+            FilterCart();
             Decimal total = 0;
             for (int i = 0; i < cartList.Count; i++)
             {
@@ -76,7 +79,7 @@ namespace M4.Account
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(1, 'muhammadmia7@gmail.com', 'P001', 'Item 1', 'Test', 'Test', 'White', 1, 100);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(1, 'modarsot@gmail.com', 'P001', 'Item 1', 'Test', 'Test', 'White', 1, 100);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
