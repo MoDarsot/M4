@@ -26,17 +26,19 @@ namespace M4.Account
 
         protected void UpdateCart()
         {
-            SqlDSCustomer1.SelectParameters["Email"].DefaultValue = User.Identity.Name.ToString();
-            gridCart.DataBind();
-            if (!Page.IsPostBack)
-                Session["Cart"] = cartList;
-            else
-                cartList = (List<CartItem>)Session["Cart"];
+            
+        }
+
+        protected void FilterCart()
+        {
+            if (gridCart.Rows[0]["Email"] != 'muhammadmiamia7@gmail.com')
+            {
+                gridCart.DeleteRow(rowIndex: 0);
+            }
         }
 
         protected decimal GetCartTotal()
         {
-            UpdateCart();
             Decimal total = 0;
             for (int i = 0; i < cartList.Count; i++)
             {
@@ -49,13 +51,11 @@ namespace M4.Account
         protected void gridShopCart_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             cartList.RemoveAt(e.RowIndex);
-            UpdateCart();
             lblAmountDue.Text = String.Format("{0:C2}", GetCartTotal());
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            UpdateCart();
             string connString = @"Data Source=146.230.177.46\ist3;Initial Catalog=group26;Persist Security Info=True;User ID=group26;Password=d1er2";
             SqlConnection conn = new SqlConnection(connString);
 
@@ -77,8 +77,6 @@ namespace M4.Account
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
-
-            UpdateCart();
         }
 
     }
