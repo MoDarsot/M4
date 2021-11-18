@@ -20,7 +20,18 @@
             <asp:Parameter Name="Email" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="gridCart" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+    <asp:GridView ID="gridCart" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" DataSourceID="group26">
+        <Columns>
+            <asp:BoundField DataField="Item_Number" HeaderText="Item_Number" SortExpression="Item_Number" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+            <asp:BoundField DataField="Product_ID" HeaderText="Product_ID" SortExpression="Product_ID" />
+            <asp:BoundField DataField="Product_Name" HeaderText="Product_Name" SortExpression="Product_Name" />
+            <asp:BoundField DataField="Product_Description" HeaderText="Product_Description" SortExpression="Product_Description" />
+            <asp:BoundField DataField="Manufacturer" HeaderText="Manufacturer" SortExpression="Manufacturer" />
+            <asp:BoundField DataField="Colour" HeaderText="Colour" SortExpression="Colour" />
+            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+            <asp:BoundField DataField="Sale_Price" HeaderText="Sale_Price" SortExpression="Sale_Price" />
+        </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
         <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -30,8 +41,10 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
+    <asp:SqlDataSource ID="group26" runat="server" ConnectionString="<%$ ConnectionStrings:group26ConnectionString %>" SelectCommand="SELECT * FROM [tblCart]"></asp:SqlDataSource>
     <asp:Label ID="lblText" runat="server" Text="Total Due:"></asp:Label>
     <asp:Label ID="lblAmountDue" runat="server"></asp:Label>
     <asp:Button ID="btnClear" runat="server" Text="Clear Cart" />
     <asp:Button ID="btnCheckout" runat="server" Text="Checkout" OnClick="btnCheckout_Click" />
+    <asp:Button ID="btnAddToCart" runat="server" Text="Add to Cart" OnClick="btnAddToCart_Click" />
 </asp:Content>
