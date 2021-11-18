@@ -16,16 +16,16 @@ namespace M4
             lblDate.Text = DateTime.Now.ToShortDateString();
             lblCustomer.Text = User.Identity.Name.ToString();
 
+            SqlDataSource1.SelectParameters["Email"].DefaultValue = User.Identity.Name.ToString();
+            GridView1.DataBind();
+
             Decimal total = 0;
-            for (int i = 0; i < GridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < GridView1.Rows.Count; i++)
             {
                 total += Decimal.Parse(GridView1.Rows[i].Cells[6].Text);
             }
 
             lblAmount.Text = total.ToString();
-            
-            SqlDataSource1.SelectParameters["Email"].DefaultValue = User.Identity.Name.ToString();
-            GridView1.DataBind();
         }
 
         protected void BtnReturn_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            _ = new SqlCommand("DELETE FROM tblCart WHERE Email='" + User.Identity.Name.ToString() + "';")
+            SqlCommand cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='" + User.Identity.Name.ToString() + "';")
             {
                 Connection = conn
             };

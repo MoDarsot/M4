@@ -27,7 +27,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR099', 'R99', 'Test', 'Test', 'None', 1, 99);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR099', 'BR99', 'Sim', 'MTN', 'None', 1, 99);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -39,7 +39,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR169', 'R99', 'Test', 'Test', 'None', 1, 169);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR169', 'BR169', 'Sim', 'MTN', 'None', 1, 169);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -51,7 +51,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR219', 'R99', 'Test', 'Test', 'None', 1, 219);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR219', 'BR219', 'Sim', 'MTN', 'None', 1, 219);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -63,7 +63,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR279', 'R99', 'Test', 'Test', 'None', 1,279);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR279', 'BR279', 'Sim', 'MTN', 'None', 1,279);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -75,7 +75,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR429', 'R99', 'Test', 'Test', 'None', 1, 429);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR429', 'BR429', 'Sim', 'MTN', 'None', 1, 429);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -87,10 +87,20 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR529', 'R99', 'Test', 'Test', 'None', 1, 529);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(0, '" + User.Identity.Name.ToString() + "', 'BLFR529', 'BR529', 'Sim', 'MTN', 'None', 1, 529);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Internet.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Mobile.aspx");
         }
     }
 }

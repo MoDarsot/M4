@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="M4.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.<asp:ImageMap ID="ImageMap1" runat="server" Height="232px">
-        </asp:ImageMap>
-    </h2>
+    <h2><%: Title %>.</h2>
     <p>
 With over a decades worth of experience in the mobile sector, Skylite has positioned itself as one of the top resellers in not just KZN, but all of South Africa. Skylite boasts unmatched deals and customer service; with prices lower than any other dealer and incredibly fast turnaround times for customer queries, it's hard to not choose Skylite.
 

@@ -58,12 +58,12 @@
             </asp:SqlDataSource>
             <div>
                 ------------------------------------------------------------------------------------------------------------<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">--------</span></div>
-            <asp:Label ID="Label3" runat="server" Text="Total Amount Due: "></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Total Amount Due: R"></asp:Label>
             <asp:Label ID="lblAmount" runat="server"></asp:Label>
             <div>
                 ------------------------------------------------------------------------------------------------------------<span style="color: rgb(0, 0, 0); font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">--------</span></div>
-            <asp:Button ID="btnPrint" runat="server" OnClick="btnPrint_Click" Text="Print" Width="255px" />
-            <asp:Button ID="btnReturn" runat="server" OnClick="btnReturn_Click" Text="Return to Store" Width="255px" />
+            <asp:Button ID="btnPrint" runat="server" OnClick="BtnPrint_Click" Text="Print" Width="255px" />
+            <asp:Button ID="btnReturn" runat="server" OnClick="BtnReturn_Click" Text="Return to Store" Width="255px" />
         </div>
     </form>
 </body>

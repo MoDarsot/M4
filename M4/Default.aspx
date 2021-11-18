@@ -9,10 +9,21 @@
             width: 100%;
         }
 
+        .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                }
+
         .banner {
             width: 100%;
             display: block;
             align-content: center;
+            position: relative;
+            text-align: center;
+            color: black;
+            font-size: 32px;
         }
 
         .banner-text-header {
@@ -76,10 +87,17 @@
     </style>
 
         <div class="content">
+
+            <h2 class="banner-text-header">Black Friday Deals</h2>
+
             <div class="banner">
-                <h2 class="banner-text-header">Black Friday Deals</h2>
+                
                 <img class="banner-image" src="https://static.wixstatic.com/media/f420dd_3c8dba8381394c4d833c7a78bfa6475e~mv2.png/v1/fill/w_1903,h_680,al_c,q_90,usm_0.66_1.00_0.01/f420dd_3c8dba8381394c4d833c7a78bfa6475e~mv2.webp">
+                <div class="centered">ONE TERRABYTE<br>That's 1000GB. Anytime. Anywhere.<br><br>Only R99pm x24</div>
+            
             </div>
+
+            
 
             <h2 class="section-title">OUR SERVICES</h2>
 
@@ -87,25 +105,27 @@
                 <div class="feature-cat">
                     <img src="https://static.wixstatic.com/media/bce2f335cdbb443a856229bf990d58ec.jpg/v1/fill/w_476,h_376,al_c,q_80,usm_0.66_1.00_0.01/bce2f335cdbb443a856229bf990d58ec.webp"
                         alt="1" />
-                    <h4>Fibre</h4>
+                    <h4>&nbsp;Fibre&nbsp; <asp:Button ID="btnFibre" runat="server" OnClick="Button1_Click" Text="Learn More" />
+                    </h4>
                 </div>
 
                 <div class="feature-cat">
                     <img src="https://static.wixstatic.com/media/11062b_cd8e272509d74b7e90ced22675341a04~mv2.jpg/v1/fill/w_476,h_376,al_c,q_80,usm_0.66_1.00_0.01/11062b_cd8e272509d74b7e90ced22675341a04~mv2.webp"
                         alt="1" />
-                    <h4>Mobile</h4>
+                    <h4>Mobile<asp:Button ID="btnMobile" runat="server" OnClick="Button2_Click" Text="Learn More" />
+                    </h4>
                 </div>
             </div>
 
             <div class="cats">
                 <div class="feature-cat">
-                    <h4>Technology Rentals</h4>
+                    <h4>Technology Rentals<br>(Coming Soon)</h4>
                     <img src="https://static.wixstatic.com/media/935a7368783045b9b9e398295613ba88.jpg/v1/fill/w_476,h_376,al_c,q_80,usm_0.66_1.00_0.01/935a7368783045b9b9e398295613ba88.webp"
                  alt="1" />
                 </div>
 
                 <div class="feature-cat">
-                    <h4>Business Solutions</h4>
+                    <h4>Business Solutions<br>(Coming Soon)</h4>
                     <img src="https://static.wixstatic.com/media/11062b_00dfbdf43bf443eaae6e0156ee6caae8~mv2.jpg/v1/fill/w_476,h_376,al_c,q_80,usm_0.66_1.00_0.01/11062b_00dfbdf43bf443eaae6e0156ee6caae8~mv2.webp"
                  alt="1" />
                 </div>

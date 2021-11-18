@@ -30,7 +30,7 @@ namespace M4.Account
         protected decimal GetCartTotal()
         {
             Decimal total = 0;
-            for (int i = 0; i < gridCart.Rows.Count - 1; i++)
+            for (int i = 0; i < gridCart.Rows.Count; i++)
             {
                 total += Decimal.Parse(gridCart.Rows[i].Cells[6].Text);
             }
@@ -55,7 +55,7 @@ namespace M4.Account
 
             conn.Open();
             Decimal total = GetCartTotal();
-            _ = new SqlCommand("INSERT INTO tblSales VALUES(1, '" + User.Identity.Name.ToString() + "', 'web', '" + DateTime.Now.ToShortDateString() + "', 'Bank', " + (Decimal)total + ");")
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, '" + User.Identity.Name.ToString() + "', 'web', '" + DateTime.Now.ToString() + "', 'Bank', " + (Decimal)total + ");")
             {
                 Connection = conn
             };
@@ -78,6 +78,8 @@ namespace M4.Account
             };
             cmd.ExecuteNonQuery();
             conn.Close();
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+
         }
 
     }

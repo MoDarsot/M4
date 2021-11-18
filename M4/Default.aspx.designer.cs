@@ -15,6 +15,24 @@ namespace M4
     {
 
         /// <summary>
+        /// btnFibre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFibre;
+
+        /// <summary>
+        /// btnMobile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMobile;
+
+        /// <summary>
         /// add99 control.
         /// </summary>
         /// <remarks>
