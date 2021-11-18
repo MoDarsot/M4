@@ -11,23 +11,36 @@
 
         .banner {
             width: 100%;
+            display: block;
+            align-content: center;
+        }
+
+        .banner-text-header {
+            font-weight: bold;
+            margin-left: 450px;
+            height: auto;
+            padding-top: -200px;
+            z-index: 1000;
         }
 
         .banner-image {
+            position: static;
             width: 100%;
         }
 
-        h2 {
+        
+
+        .section-title {
             margin: 0 auto;
             text-align: center;
             margin-top: 80px;
             font-weight: bolder;
+            height: auto;
         }
         
         .cats {
             display: flex;
             margin-top: 60px;
-
         }
 
         .feature-cat {
@@ -53,10 +66,11 @@
 
         <div class="content">
             <div class="banner">
+                <h2 class="banner-text-header">Black Friday Deals</h2>
                 <img class="banner-image" src="https://static.wixstatic.com/media/f420dd_3c8dba8381394c4d833c7a78bfa6475e~mv2.png/v1/fill/w_1903,h_680,al_c,q_90,usm_0.66_1.00_0.01/f420dd_3c8dba8381394c4d833c7a78bfa6475e~mv2.webp">
             </div>
 
-            <h2>OUR SERVICES</h2>
+            <h2 class="section-title">OUR SERVICES</h2>
 
             <div class="cats">
                 <div class="feature-cat">
@@ -86,7 +100,7 @@
                 </div>
             </div>
 
-            <h2>BLACK 2021</h2>
+            <h2 class="section-title">BLACK 2021</h2>
 
             <div class="cats">
                 <div class="feature-cat">
@@ -110,26 +124,5 @@
                 </div>
 
             </div>
-
-
-            <h2>Join our mailing list!</h2>
-
-
-            <div class="mailing-list">
-                
-            </div>
-
-            <%--        
-
-   
-
-        <div class="item18">JOIN OUR MAILING LIST</div>
-
-        <div class="item19">bottom_banner_left</div>
-
-        <div class="item20">bottom_banner_right</div>--%>
-        </div>
-
-
 
 </asp:Content>
