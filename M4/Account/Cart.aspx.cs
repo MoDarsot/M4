@@ -61,11 +61,8 @@ namespace M4.Account
             string connString = @"Data Source=146.230.177.46\ist3;Initial Catalog=group26;Persist Security Info=True;User ID=group26;Password=d1er2";
             SqlConnection conn = new SqlConnection(connString);
 
-            
-
-
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, 'gege', 'web', '" + DateTime.Now + "', 'Bank', " + (Double)total + ");");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, 'muhammadmia7@gmail.com', 'web', '" + DateTime.Now + "', 'Bank', " + (Decimal)total + ");");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
