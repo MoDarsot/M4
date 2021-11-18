@@ -17,13 +17,12 @@ namespace M4.Account
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
             SqlDSCustomer1.SelectParameters["Email"].DefaultValue = User.Identity.Name.ToString();
+            group26.SelectParameters["Email"].DefaultValue = User.Identity.Name.ToString();
             gridCart.DataBind();
             if (!Page.IsPostBack)
                 Session["Cart"] = cartList;
             else
                 cartList = (List<CartItem>)Session["Cart"];
-
-            FilterCart();
         }
 
         protected void UpdateCart()
@@ -31,20 +30,9 @@ namespace M4.Account
             
         }
 
-        protected void FilterCart()
-        {
-            for (int i = 0; i < gridCart.Rows.Count; i++)
-            {
-                if (gridCart.Rows[i].Cells[1].Text != User.Identity.Name.ToString())
-                {
-                    gridCart.DeleteRow(i);
-                }
-            }
-        }
 
         protected decimal GetCartTotal()
         {
-            FilterCart();
             Decimal total = 0;
             for (int i = 0; i < cartList.Count; i++)
             {

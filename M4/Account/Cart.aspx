@@ -22,8 +22,6 @@
     </asp:SqlDataSource>
     <asp:GridView ID="gridCart" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" DataSourceID="group26">
         <Columns>
-            <asp:BoundField DataField="Item_Number" HeaderText="Item_Number" SortExpression="Item_Number" />
-            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
             <asp:BoundField DataField="Product_ID" HeaderText="Product_ID" SortExpression="Product_ID" />
             <asp:BoundField DataField="Product_Name" HeaderText="Product_Name" SortExpression="Product_Name" />
             <asp:BoundField DataField="Product_Description" HeaderText="Product_Description" SortExpression="Product_Description" />
@@ -41,7 +39,11 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
-    <asp:SqlDataSource ID="group26" runat="server" ConnectionString="<%$ ConnectionStrings:group26ConnectionString %>" SelectCommand="SELECT * FROM [tblCart]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="group26" runat="server" ConnectionString="<%$ ConnectionStrings:group26ConnectionString %>" SelectCommand="SELECT [Product_ID], [Product_Name], [Product_Description], [Manufacturer], [Colour], [Quantity], [Sale_Price] FROM [tblCart] WHERE ([Email] = @Email)">
+        <SelectParameters>
+            <asp:Parameter Name="Email" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
     <asp:Label ID="lblText" runat="server" Text="Total Due:"></asp:Label>
     <asp:Label ID="lblAmountDue" runat="server"></asp:Label>
     <asp:Button ID="btnClear" runat="server" Text="Clear Cart" />
