@@ -35,7 +35,7 @@ namespace M4.Account
             {
                 if (gridCart.Rows[i].Cells[1].Text != User.Identity.Name.ToString())
                 {
-                    gridCart.DeleteRow(rowIndex: 0);
+                    gridCart.DeleteRow(rowIndex: i);
                 }
             }
         }
