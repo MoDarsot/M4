@@ -12,7 +12,6 @@ namespace M4.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlDataSource1.SelectParameters["Client_ID"].DefaultValue = User.Identity.Name.ToString();
-            GridView1.DataBind();
         }
     }
 }
