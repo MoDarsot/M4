@@ -85,5 +85,10 @@ namespace M4.Account
             conn.Close();
         }
 
+        protected void btnClearCart(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
