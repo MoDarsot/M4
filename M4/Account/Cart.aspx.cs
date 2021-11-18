@@ -31,9 +31,12 @@ namespace M4.Account
 
         protected void FilterCart()
         {
-            if (gridCart.Rows[0]["Email"] != 'muhammadmiamia7@gmail.com')
+            for (int i = 0; i < gridCart.Rows.Count; i++)
             {
-                gridCart.DeleteRow(rowIndex: 0);
+                if (gridCart.Rows[i].Cells[1].Text != User.Identity.Name.ToString())
+                {
+                    gridCart.DeleteRow(rowIndex: 0);
+                }
             }
         }
 
