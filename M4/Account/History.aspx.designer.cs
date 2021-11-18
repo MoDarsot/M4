@@ -7,10 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace M4.Account
-{
-    public partial class History
-    {
+namespace M4.Account {
+    
+    
+    public partial class History {
     }
 }
