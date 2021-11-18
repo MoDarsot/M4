@@ -23,21 +23,19 @@ namespace M4.Account
                 Session["Cart"] = cartList;
             else
                 cartList = (List<CartItem>)Session["Cart"];
-        }
 
-        protected void UpdateCart()
-        {
-            
+            GetCartTotal();
         }
-
 
         protected decimal GetCartTotal()
         {
             Decimal total = 0;
-            for (int i = 0; i < cartList.Count; i++)
+            for (int i = 0; i < gridCart.Rows.Count - 1; i++)
             {
-                total += cartList[i].SubTotal;
+                total = total + Decimal.Parse(gridCart.Rows[i].Cells[6].Text);
             }
+
+            lblAmountDue.Text = total.ToString();
 
             return total;
         }
@@ -46,6 +44,8 @@ namespace M4.Account
         {
             cartList.RemoveAt(e.RowIndex);
             lblAmountDue.Text = String.Format("{0:C2}", GetCartTotal());
+
+            GetCartTotal();
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
@@ -58,6 +58,10 @@ namespace M4.Account
             SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, 'muhammadmia7@gmail.com', 'web', '" + DateTime.Now.ToShortDateString() + "', 'Bank', " + (Decimal)total + ");");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='muhammadmia7@gmail.com';");
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
             conn.Close();
         }
 
@@ -67,15 +71,24 @@ namespace M4.Account
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(1, 'modarsot@gmail.com', 'P001', 'Item 1', 'Test', 'Test', 'White', 1, 100);");
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblCart VALUES(1, 'muhammadmia7@gmail.com', 'P001', 'Item 1', 'Test', 'Test', 'White', 1, 100);");
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
+
+            GetCartTotal();
         }
 
-        protected void btnClearCart(object sender, EventArgs e)
+        protected void btnClearCart_Click(object sender, EventArgs e)
         {
+            string connString = @"Data Source=146.230.177.46\ist3;Initial Catalog=group26;Persist Security Info=True;User ID=group26;Password=d1er2";
+            SqlConnection conn = new SqlConnection(connString);
 
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='muhammadmia7@gmail.com';");
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
     }

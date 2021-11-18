@@ -46,7 +46,7 @@
     </asp:SqlDataSource>
     <asp:Label ID="lblText" runat="server" Text="Total Due:"></asp:Label>
     <asp:Label ID="lblAmountDue" runat="server"></asp:Label>
-    <asp:Button ID="btnClear" runat="server" Text="Clear Cart" />
+    <asp:Button ID="btnClear" runat="server" Text="Clear Cart" OnClick="btnClearCart_Click" />
     <asp:Button ID="btnCheckout" runat="server" Text="Checkout" OnClick="btnCheckout_Click" />
     <asp:Button ID="btnAddToCart" runat="server" Text="Add to Cart" OnClick="btnAddToCart_Click" />
 </asp:Content>
