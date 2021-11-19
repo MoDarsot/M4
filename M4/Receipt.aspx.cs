@@ -34,7 +34,7 @@ namespace M4
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='" + User.Identity.Name.ToString() + "';")
+            SqlCommand cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='"+User.Identity.Name.ToString()+"';")
             {
                 Connection = conn
             };

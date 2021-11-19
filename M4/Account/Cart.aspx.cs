@@ -55,7 +55,7 @@ namespace M4.Account
 
             conn.Open();
             Decimal total = GetCartTotal();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, '" + User.Identity.Name.ToString() + "', 'web', '" + DateTime.Now.ToString() + "', 'Bank', " + (Decimal)total + ");")
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES('1', '"+User.Identity.Name.ToString()+"', 'web', '"+DateTime.Now.ToString()+"', 'Bank', "+total+");")
             {
                 Connection = conn
             };
@@ -72,7 +72,7 @@ namespace M4.Account
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='" + User.Identity.Name.ToString() + "';")
+            SqlCommand cmd = new SqlCommand("DELETE FROM tblCart WHERE Email='"+User.Identity.Name.ToString()+"';")
             {
                 Connection = conn
             };
