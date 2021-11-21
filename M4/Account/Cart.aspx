@@ -47,5 +47,5 @@
     <asp:Label ID="lblText" runat="server" Text="Total Due:"></asp:Label>
     <asp:Label ID="lblAmountDue" runat="server"></asp:Label>
     <asp:Button ID="btnClear" runat="server" Text="Clear Cart" OnClick="BtnClearCart_Click" />
-    <asp:Button ID="btnCheckout" runat="server" Text="Checkout" OnClick="BtnCheckout_Click" />
+    <asp:Button ID="btnCheckout" runat="server" Text="Checkout" OnClientClick="return confirm('Are you sure you wish to checkout?');" OnClick="BtnCheckout_Click" />
 </asp:Content>

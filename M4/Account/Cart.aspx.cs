@@ -27,12 +27,12 @@ namespace M4.Account
             GetCartTotal();
         }
 
-        protected decimal GetCartTotal()
+        protected float GetCartTotal()
         {
-            Decimal total = 0;
+            float total = 0;
             for (int i = 0; i < gridCart.Rows.Count; i++)
             {
-                total += Decimal.Parse(gridCart.Rows[i].Cells[6].Text);
+                total += float.Parse(gridCart.Rows[i].Cells[6].Text);
             }
 
             lblAmountDue.Text = total.ToString();
@@ -54,11 +54,9 @@ namespace M4.Account
             SqlConnection conn = new SqlConnection(connString);
 
             conn.Open();
-            Decimal total = GetCartTotal();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tblSales VALUES(1, '" + User.Identity.Name.ToString() + "', 'web', '" + DateTime.Now.ToString() + "', 'Bank', " + (Decimal)total + ");")
-            {
-                Connection = conn
-            };
+            SqlCommand cmd = new SqlCommand("INSERT INTO tblSale VALUES(1, '" + User.Identity.Name.ToString() + "', 'web', '" + DateTime.Today.ToString() + "', 'Bank', " + GetCartTotal() + ");");
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
             conn.Close();
 
             Response.Redirect("~/Receipt.aspx");

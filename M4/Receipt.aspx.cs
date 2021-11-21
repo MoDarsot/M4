@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace M4
 {
@@ -38,7 +40,9 @@ namespace M4
             {
                 Connection = conn
             };
+            cmd.ExecuteNonQuery();
             conn.Close();
+
 
             Response.Redirect("~/Default.aspx");
         }
@@ -46,7 +50,7 @@ namespace M4
 
         protected void BtnPrint_Click(object sender, EventArgs e)
         {
-            
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "key", "window.print()", true);
         }
     }
 }
